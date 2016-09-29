@@ -6,6 +6,7 @@ var index = require('./lib/index'),
         str += chunk;
       }).on('end', function(){
         if (str !== '') {
+          
           var o = {},
               arr = str.split('&').forEach(function(part){
                 var parts = part.split('='),
@@ -13,13 +14,14 @@ var index = require('./lib/index'),
                     v = parts[1];
                 o[k] = v;
               });
-          
+                    
           if (o.filetype === 'excel') {
             res.setHeader('Content-disposition', 'attachment; filename=bengt.xls');
           }
           if (o.filetype === 'csv') {
             res.setHeader('Content-disposition', 'attachment; filename=bengt.csv');
           }
+          
           res.setHeader('Content-type', 'text/plain');
           res.end(str);
         }
