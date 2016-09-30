@@ -2,17 +2,26 @@
 A data wrangelig utility. A pretty stable work in progress.
 
 # api
-`File` is required. Concatenation is default. Separate columns by `,` and multiple inputs by `;`
+`File` is required `.csv`, concatenation is default. Separate columns by `,` and multiple inputs by `;`
 
-## options
+### options
 
-`GroupBy` A column to group all other values by.
+##### GroupBy `col`
+A column to group all other values by.
 
-`Skip` Skip all these columns. Separate multiple by `,`
+##### Skip `col [, col]`
+Skip all these columns.
 
-`Unique` Concatenate unique values from column.
+##### Unique `col [, col]`
+Concatenate *unique values* from column.
 
-`Filter` Filter column by max(`column`) or use standard comparison operators `column>value`, `=`, `!=` or even regex `column/regex/`
+##### Filter `target, filter [, filter] [; target, filter [, filter]]`
+Filter target column by one or more of the following:
+- `max(col)`. Only cells with valid dates `YYYY-MM-DD` will be included.
+- Standard comparison operators like `column>value`, `=`, `!=`, `>=` or regex `column/regex/`.
+
+##### Export to file
+Check to download a `.csv` of the results. Works in modern browsers such as IE 10+. See more [here](https://github.com/eligrey/FileSaver.js/). Otherwise logs results.
 
 # demo
 [demo](http://s.codepen.io/KarlPokus/debug/7a796f207bb216bfeb286bdc2337dab0)
@@ -24,7 +33,7 @@ A data wrangelig utility. A pretty stable work in progress.
 - [Create file in browser](http://stackoverflow.com/questions/3665115/create-a-file-in-memory-for-user-to-download-not-through-server)
 
 # Todos
-- [ ] add proper tests for fat client
+- [ ] add proper tests for fat client with [BabyParse](https://github.com/Rich-Harris/BabyParse)
 - [ ] check safe headernames
 - [x] check valid dates
 - [ ] validate input
@@ -35,6 +44,7 @@ A data wrangelig utility. A pretty stable work in progress.
 - [ ] min
 - [ ] count
 - [x] implement sqls WHERE
+- [ ] option to export to {}
 
 # License
 MIT
