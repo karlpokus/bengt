@@ -37,7 +37,7 @@ Check to download a `.csv` of the results. Works in modern browsers such as IE 1
 - [Create file in browser](http://stackoverflow.com/questions/3665115/create-a-file-in-memory-for-user-to-download-not-through-server)
 
 # Todos
-- [ ] add proper tests for fat client with [BabyParse](https://github.com/Rich-Harris/BabyParse)
+- [x] add proper tests for fat client
 - [ ] check safe headernames
 - [x] check valid dates
 - [ ] validate input
@@ -48,7 +48,8 @@ Check to download a `.csv` of the results. Works in modern browsers such as IE 1
 - [ ] min
 - [ ] count
 - [x] implement sqls WHERE
-- [ ] option to export to {}
+- [x] option to export to {}
+- [x] option to export to file
 
 # License
 MIT
