@@ -2,13 +2,13 @@
 A data wrangelig utility. A pretty stable work in progress.
 
 # api
-`File` is required `.csv`, concatenation is default. Separate columns by `,` and multiple inputs by `;`
+`File` is a required `.csv`, concatenation is default. Separate columns by `,` and multiple inputs by `;`
 
 ## options
 
 ### GroupBy
 `col`
-A column to group all other values by.
+A column to group all other values by. Bengt appends an `_` to the key for proper order.
 
 ### Skip
 `col [, col]`
@@ -24,8 +24,8 @@ Filter target column by one or more of the following:
 - `max(col)`. Only cells with valid dates `YYYY-MM-DD` will be included.
 - Standard comparison operators like `column>value`, `=`, `!=`, `>=` or regex `column/regex/`.
 
-### Export to file
-Check to download a `.csv` of the results. Works in modern browsers such as IE 10+. See more [here](https://github.com/eligrey/FileSaver.js/). Otherwise logs results.
+### Export
+`Export to file` works in modern browsers such as IE 10+. More [here](https://github.com/eligrey/FileSaver.js/)
 
 # demo
 [demo](http://s.codepen.io/KarlPokus/debug/7a796f207bb216bfeb286bdc2337dab0)
@@ -40,7 +40,7 @@ Check to download a `.csv` of the results. Works in modern browsers such as IE 1
 - [x] add proper tests for fat client
 - [ ] check safe headernames
 - [x] check valid dates
-- [ ] validate input
+- [x] validate input
 - [ ] use papa parse error report
 - [x] option: uniq
 - [x] export csv from BO - Pass!
@@ -48,8 +48,7 @@ Check to download a `.csv` of the results. Works in modern browsers such as IE 1
 - [ ] min
 - [ ] count
 - [x] implement sqls WHERE
-- [x] option to export to {}
-- [x] option to export to file
+- [x] export to json, csv, file
 
 # License
 MIT
