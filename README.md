@@ -48,9 +48,11 @@ Filter target column by one or more of the following:
 - [x] remove empty cells
 - [ ] min
 - [ ] count
+- [ ] split all inputs by ; enabling fns?
 - [x] implement sqls WHERE
 - [x] export to json, csv, file
 - [x] replace input with textarea on client
+- [ ] case insensitive input validation
 
 # License
 MIT
