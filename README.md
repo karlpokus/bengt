@@ -1,5 +1,5 @@
 # bengt
-A data wrangelig utility. A pretty stable work in progress.
+A data wrangelig utility. A pretty stable work in progress. All computations are done client side for security reasons.
 
 # api
 `File` is a required `.csv`, concatenation is default. Separate columns by `,` and multiple inputs by `;`
@@ -8,7 +8,7 @@ A data wrangelig utility. A pretty stable work in progress.
 
 ### GroupBy
 `col`
-A column to group all other values by. Bengt appends an `_` to the key for proper order.
+A column to group all other values by. Returns a collection if set, otherwise an object.
 
 ### Skip
 `col [, col]`
@@ -22,7 +22,8 @@ Concatenate *unique values* from column.
 `target, filter [, filter] [; target, filter [, filter]]`
 Filter target column by one or more of the following:
 - `max(col)`. Only cells with valid dates `YYYY-MM-DD` will be included.
-- Standard comparison operators like `column>value`, `=`, `!=`, `>=` or regex `column/regex/`.
+- Standard comparison operators like `column>value`, `=`, `!=`, `>=` or regex `col/regex/`
+- Use `rename(new name)` to rename col for output
 
 ### Export
 `Export to file` works in modern browsers such as IE 10+. More [here](https://github.com/eligrey/FileSaver.js/)
@@ -49,6 +50,7 @@ Filter target column by one or more of the following:
 - [ ] count
 - [x] implement sqls WHERE
 - [x] export to json, csv, file
+- [x] replace input with textarea on client
 
 # License
 MIT
