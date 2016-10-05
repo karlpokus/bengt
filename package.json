@@ -1,6 +1,6 @@
 {
   "name": "bengt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "bengt loves csv",
   "main": "server.js",
   "scripts": {
