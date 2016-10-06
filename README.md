@@ -39,10 +39,10 @@ Filter target column by one or more of the following:
 
 # Todos
 - [x] add proper tests for fat client
-- [ ] check safe headernames
+- [x] check safe headernames (just strings)
 - [x] check valid dates
 - [x] validate input
-- [ ] use papa parse error report
+- [x] use papa parse error report via debug option
 - [x] option: uniq
 - [x] export csv from BO - Pass!
 - [x] remove empty cells
@@ -52,7 +52,7 @@ Filter target column by one or more of the following:
 - [x] implement sqls WHERE
 - [x] export to json, csv, file
 - [x] replace input with textarea on client
-- [ ] case insensitive input validation
+- [x] case insensitive input validation (not implemented)
 
 # License
 MIT
