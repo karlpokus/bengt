@@ -28,6 +28,9 @@ Filter target column by one or more of the following:
 ### Export
 `Export to file` works in modern browsers such as IE 10+. More [here](https://github.com/eligrey/FileSaver.js/)
 
+### Debug
+Check to only log data and errors from papa parse.
+
 # demo
 [demo](http://s.codepen.io/KarlPokus/debug/7a796f207bb216bfeb286bdc2337dab0)
 
