@@ -9,13 +9,14 @@ var test = require('tape'),
       skip: '',
       uniq: '',
       filters: '',
-      exportType: null
+      exportType: null,
+      debug: null
     };
 
 test('diagnos max(datum) && groupBy=namn', function(t){
   userData.filters = "diagnos, max(datum)";
   userData.groupBy = "namn";
-  
+
   bengt.main(userData, function(err, data){
     t.false(err);
     t.equal(data[0].diagnos, 'paniksyndrom');
@@ -27,7 +28,7 @@ test('diagnos max(datum) && groupBy=namn', function(t){
 test('diagnos, max(datum), roll=läk && groupBy=namn', function(t){
   userData.filters = "diagnos, max(datum), roll=läk";
   userData.groupBy = "namn";
-  
+
   bengt.main(userData, function(err, data){
     t.false(err);
     t.equal(data[0].diagnos, 'ocd');
@@ -39,7 +40,7 @@ test('diagnos, max(datum), roll=läk && groupBy=namn', function(t){
 test('diagnos, ålder>30 && groupBy=none', function(t){
   userData.filters = "diagnos, ålder>30";
   userData.groupBy = "";
-  
+
   bengt.main(userData, function(err, data){
     t.false(err);
     t.equal(data.diagnos, 'psykos');
@@ -50,7 +51,7 @@ test('diagnos, ålder>30 && groupBy=none', function(t){
 test('diagnos, diagnos/i/ && groupBy=none', function(t){
   userData.filters = "diagnos, diagnos/i/";
   userData.groupBy = "";
-  
+
   bengt.main(userData, function(err, data){
     t.false(err);
     t.equal(data.diagnos, 'social fobi;paniksyndrom;mani;bipolär');
@@ -61,10 +62,21 @@ test('diagnos, diagnos/i/ && groupBy=none', function(t){
 test('diagnos, max(datum) && groupBy=none', function(t){
   userData.filters = "diagnos, max(datum)";
   userData.groupBy = "";
-  
+
   bengt.main(userData, function(err, data){
     t.false(err);
     t.equal(data.diagnos, 'paniksyndrom');
+    t.end();
+  });
+});
+
+test('ålder, rename(age)', function(t){
+  userData.filters = "ålder, rename(age)";
+  userData.groupBy = "";
+
+  bengt.main(userData, function(err, data){
+    t.false(err);
+    t.equal(typeof data.age, 'string');
     t.end();
   });
 });
